@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="utf-8">
+  <title>Soundoji 😂</title>
+  <meta name="description" content="Emoji trends through music genres">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+  <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
+  <script>
+
+    // Set the SoundCloud client ID
+    SC.initialize({
+      client_id: "8c4444dd864738ea8c921daf514c8da9"
+    });
+
+    // Limit size of results
+    var page_size = 200;
+
+    // Pull top tracks that are commentable from choosen genre
+    SC.get("/tracks", { genres: "hiphop", limit: page_size, commentable: true }).then(function(tracks) {
+      tracks.forEach(function(track) {
+        trackId = track.id
+        trackTitle = track.title
+
+        // Pull the comments from each track
+        SC.get("/tracks/" + trackId + "/comments").then(function(comments) {
+          comments.forEach(function(comment) {
+
+            // Unicode range for emoji
+            var ranges = [
+              '\ud83c[\udf00-\udfff]', // U+1F300 to U+1F3FF
+              '\ud83d[\udc00-\ude4f]', // U+1F400 to U+1F64F
+              '\ud83d[\ude80-\udeff]'  // U+1F680 to U+1F6FF
+            ];
+
+            // Retrieve emoji from the comment
+            var commentBody = comment.body.match(new RegExp(ranges.join('|'), 'g'), '');
+
+            // Create HTML list item with class names
+            var list = document.getElementById('js-comments--1');
+            var listItem = document.createElement('li');
+            listItem.className = 'emoji';
+
+            // Check if comment is null
+            if ( commentBody != null ) {
+              // Append comment to list item
+              listItem.innerHTML = commentBody.join('');
+
+              // Append list item to list
+              list.appendChild(listItem);
+            }
+          })
+        })
+      })
+    });
+
+    // Pull top tracks that are commentable from choosen genre
+    SC.get("/tracks", { genres: "techno", limit: page_size, commentable: true }).then(function(tracks) {
+      tracks.forEach(function(track) {
+        trackId = track.id
+        trackTitle = track.title
+
+        // Pull the comments from each track
+        SC.get("/tracks/" + trackId + "/comments").then(function(comments) {
+          comments.forEach(function(comment) {
+
+            // Unicode range for emoji
+            var ranges = [
+              '\ud83c[\udf00-\udfff]', // U+1F300 to U+1F3FF
+              '\ud83d[\udc00-\ude4f]', // U+1F400 to U+1F64F
+              '\ud83d[\ude80-\udeff]'  // U+1F680 to U+1F6FF
+            ];
+
+            // Retrieve emoji from the comment
+            var commentBody = comment.body.match(new RegExp(ranges.join('|'), 'g'), '');
+
+            // Create HTML list item with class names
+            var list = document.getElementById('js-comments--2');
+            var listItem = document.createElement('li');
+            listItem.className = 'emoji';
+
+            // Check if comment is null
+            if ( commentBody != null ) {
+              // Append comment to list item
+              listItem.innerHTML = commentBody.join('');
+
+              // Append list item to list
+              list.appendChild(listItem);
+            }
+          })
+        })
+      })
+    });
+
+  </script>
+
+  <style>
+    html {
+      box-sizing: border-box;
+      height: 100vh;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-size: 100%;
+      overflow: hidden;
+      font-family: 'Chewy', cursive;
+    }
+
+    header {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 3rem;
+      letter-spacing: 0.1rem;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    h2 span:first-of-type {
+      color: hsl(225, 77%, 50%);
+    }
+
+    h2 span:last-of-type {
+      color: hsl(325, 81%, 56%);
+    }
+
+    main {
+      display: flex;
+      height: 100vh;
+    }
+
+    .comments {
+      width: 50%;
+      margin: 0;
+      padding: 0 1rem;
+      overflow: hidden;
+      list-style: none;
+      text-align: center;
+      background-color: hsl(225, 77%, 50%);
+    }
+
+    .comments:last-of-type {
+      background-color: hsl(325, 81%, 56%);
+    }
+
+    .emoji {
+      display: inline-block;
+      padding: 1%;
+      position: relative;
+      -o-animation: rain 10s linear infinite;
+      animation: rain 10s linear infinite;
+      webkit-transform: translate3d(0,0,0);
+    }
+
+    @-o-keyframes soundoji {
+      0%   { background-position: 50% 0; }
+      50%  { background-position: 50% 100%; }
+      100% { background-position: 50% 0; }
+    }
+
+    @keyframes soundoji {
+      0%   { background-position: 50% 0; }
+      50%  { background-position: 50% 100%; }
+      100% { background-position: 50% 0; }
+    }
+
+    @-o-keyframes rain {
+      from { top: 0 }
+      to   { top: 100% }
+    }
+
+    @keyframes rain {
+      from { top: 0 }
+      to   { top: 100% }
+    }
+
+  </style>
+  <body>
+    <header class="header" role="banner">
+      <h1>Soundoji</h1>
+      <h2><span>Hip Hop</span> v <span>Techno</span></h2>
+    </header>
+
+    <main role="main">
+      <ul class="comments" id="js-comments--1">
+      </ul>
+      <ul class="comments" id="js-comments--2">
+      </ul>
+    </main>
+  </body>
+</html>
