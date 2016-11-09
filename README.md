@@ -19,5 +19,5 @@ The first attempt was really just to see if this was possible:
 
 ## Notes
 - Don’t start side projects that involve Unicode characters
-- I am not actually sure how people are actually leaving emoji comments. iOS and Android apps don’t have comment functionality. Neither does their Website on mobile. Was the average user savvy enough to input Emoji on desktop computers? 
+- I am not actually sure how people are leaving emoji comments. iOS and Android apps don’t have comment functionality. Neither does their Website on mobile. Is the average user savvy enough to input Emoji on desktop computers? 
 - Will my data increase with the release of the new Touch Bar?
