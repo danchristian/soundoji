@@ -5,86 +5,9 @@
   <meta name="description" content="Emoji trends through music genres">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
   <script src="soundcloud.js"></script>
-  <style type="text/css">
-    html {
-      box-sizing: border-box;
-      height: 100vh;
-    }
-
-    *, *:before, *:after {
-      box-sizing: inherit;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      font-size: 100%;
-      overflow: hidden;
-      font-family: 'Chewy', cursive;
-    }
-
-    header {
-      padding: 1rem;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0 0 0.5rem 0;
-      font-size: 3rem;
-      letter-spacing: 0.1rem;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    h2 span:first-of-type {
-      color: hsl(225, 77%, 50%);
-    }
-
-    h2 span:last-of-type {
-      color: hsl(325, 81%, 56%);
-    }
-
-    main {
-      display: flex;
-      height: 100vh;
-    }
-
-    .commentz {
-      width: 50%;
-      height: 100vh;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      list-style: none;
-      text-align: center;
-      background-color: hsl(225, 77%, 50%);
-    }
-
-    .commentz:last-of-type {
-      background-color: hsl(325, 81%, 56%);
-    }
-
-    .emoji {
-      display: inline-block;
-      margin: 5%;
-      position: relative;
-      font-size: 1.5rem;
-      letter-spacing: 1.5rem;
-      -webkit-transform: translate3d(0,0,0);
-      animation: rain 14s linear infinite;
-    }
-
-    @keyframes rain {
-      from { top: 0; }
-      to   { top: 100%; }
-    }
-  </style>
   <body>
     <header class="header" role="banner">
       <h1>Soundoji</h1>
