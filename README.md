@@ -16,6 +16,7 @@ The first attempt was really just to see if this was possible:
 - Make the genres selectable by the user with a select menu
 - Find a more robust way to check for emoji characters - look into using a library (https://github.com/essdot/spliddit)
 - Add DOM elements outside of the loop to reduce repaint. Look into using DocumentFragment
+- Make better use of functions to clean up repeated, non DRY requests
 - Split emoji down into individual arrays from comment, rather than groups
 - Find a better way to display the emoji to see if there are clearer patterns
 - Making the emoji clickable and link back to the track
