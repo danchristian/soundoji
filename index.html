@@ -14,7 +14,7 @@
     });
 
     // Limit size of results
-    var page_size = 200;
+    var page_size = 100;
 
     // Pull top tracks that are commentable from choosen genre
     SC.get("/tracks", { genres: "hiphop", limit: page_size, commentable: true }).then(function(tracks) {
@@ -94,7 +94,7 @@
 
   </script>
 
-  <style>
+  <style type="text/css">
     html {
       box-sizing: border-box;
       height: 100vh;
@@ -142,51 +142,34 @@
       height: 100vh;
     }
 
-    .comments {
+    .commentz {
       width: 50%;
       margin: 0;
-      padding: 0 1rem;
+      padding: 0;
       overflow: hidden;
       list-style: none;
       text-align: center;
       background-color: hsl(225, 77%, 50%);
     }
 
-    .comments:last-of-type {
+    .commentz:last-of-type {
       background-color: hsl(325, 81%, 56%);
     }
 
     .emoji {
       display: inline-block;
-      padding: 1%;
+      margin: 5%;
       position: relative;
-      -o-animation: rain 10s linear infinite;
-      animation: rain 10s linear infinite;
-      webkit-transform: translate3d(0,0,0);
-    }
-
-    @-o-keyframes soundoji {
-      0%   { background-position: 50% 0; }
-      50%  { background-position: 50% 100%; }
-      100% { background-position: 50% 0; }
-    }
-
-    @keyframes soundoji {
-      0%   { background-position: 50% 0; }
-      50%  { background-position: 50% 100%; }
-      100% { background-position: 50% 0; }
-    }
-
-    @-o-keyframes rain {
-      from { top: 0 }
-      to   { top: 100% }
+      font-size: 1.5rem;
+      letter-spacing: 1.5rem;
+      -webkit-transform: translate3d(0,0,0);
+      animation: rain 14s linear infinite;
     }
 
     @keyframes rain {
-      from { top: 0 }
-      to   { top: 100% }
+      from { top: 0; }
+      to   { top: 100%; }
     }
-
   </style>
   <body>
     <header class="header" role="banner">
@@ -195,9 +178,9 @@
     </header>
 
     <main role="main">
-      <ul class="comments" id="js-comments--1">
+      <ul class="commentz" id="js-comments--1">
       </ul>
-      <ul class="comments" id="js-comments--2">
+      <ul class="commentz" id="js-comments--2">
       </ul>
     </main>
   </body>
