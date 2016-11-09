@@ -14,10 +14,11 @@ The first attempt was really just to see if this was possible:
 ## Future Improvements 
 
 - Make the genres selectable by the user with a select menu
+- Find a more robust way to check for emoji - look into using a library (https://github.com/essdot/spliddit)
 - Find a better way to display the emoji. Perhaps group similar emoji to see if there are clearer patterns
 - Making the emoji clickable and link back to the track
 
 ## Notes
-- Don’t start side projects that involve Unicode characters
+- Do not start side projects that involve Unicode characters
 - I am not actually sure how people are leaving emoji comments. iOS and Android apps don’t have comment functionality. Neither does their Website on mobile. Is the average user savvy enough to input Emoji on desktop computers? 
-- Will my data increase with the release of the new Touch Bar?
+- Will my data increase with the release of the new Apple Touch Bar?
