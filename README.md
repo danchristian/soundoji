@@ -2,6 +2,8 @@
 
 https://danchristian.github.io/soundoji
 
+Playing around with the SoundCloud API I was curious to see if I could strip the emojis from track comments and compare genres against genres. Would there be a bias to the type of emoji used in Hip Hop compared to Techno?
+
 ## First Attempt
 
 The first attempt was really just to see if this was possible:
