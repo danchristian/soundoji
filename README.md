@@ -1,4 +1,4 @@
-# soundoji
+# Soundoji
 
 https://danchristian.github.io/soundoji
 
